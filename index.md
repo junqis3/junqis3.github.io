@@ -5,5 +5,11 @@ title: Home
 
 # My Visualizations
 
-- [Visualization](/viz4.html)
-- [Write-up for Visualization 1](/writeup/)
+## Visualization 1
+[Link to full visualization 1](/viz4.html) <!-- If it's an interactive or standalone HTML -->
+
+### Write-up for Visualization 1
+
+Here is my detailed write-up for Visualization 1.
+
+---
