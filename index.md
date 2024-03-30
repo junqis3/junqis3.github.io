@@ -5,7 +5,8 @@ title: Home
 
 #HW8.1 Visualizations
 ## Dataset
-[Click here to see the dataset]("https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv")
+https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv
+
 ## Visualization 1
 [Click here to see the visualizations](/viz4.html)
 
