@@ -5,7 +5,7 @@ title: Home
 
 #HW8.1 Visualizations
 ## Dataset
-[Click here to see the dataset](/"https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv")
+[Click here to see the dataset]("https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv")
 ## Visualization 1
 [Click here to see the visualizations](/viz4.html)
 
@@ -20,24 +20,36 @@ Interactivity is introduced through a brushing feature in the second visualizati
 
 ## Python code 
 import altair as alt
+
 import pandas as pd
+
 alt.data_transformers.disable_max_rows()
+
 url = "https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv"
+
 data = pd.read_csv(url)
+
 filtered_data1 = data[(data['Total Floors'] > 0) & (data['Total Floors'] < 10)]
+
 viz1 = alt.Chart(filtered_data1).mark_line().encode(
     x=alt.X('Total Floors:O', title='Number of Floors'), 
     y=alt.Y('count():Q', title='Number of Buildings') 
 )
+
 brush = alt.selection(type='interval', encodings=['x'])
+
 filtered_data2 = data[data['Year Acquired'] > 0]
+
 viz2 = alt.Chart(filtered_data2).mark_bar().encode(
     x=alt.X('Year Acquired:Q', title='Year Acquired'),
     y=alt.Y('sum(Square Footage):Q', title='Total Square Footage'),
     color=alt.condition(brush, alt.value('steelblue'), alt.value('grey'))
 ).add_selection(brush)
+
 viz3=viz1.transform_filter(brush)
+
 viz4 = alt.hconcat(viz3, viz2)
+
 viz4
 
 ---
